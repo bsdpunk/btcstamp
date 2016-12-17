@@ -10,7 +10,7 @@ http.get(url, function(res){
 
     res.on('end', function(){
         var fbResponse = JSON.parse(body);
-        console.log("Got a response: ", body);
+        console.log(body);
     });
 }).on('error', function(e){
     console.log("Got an error: ", e);
