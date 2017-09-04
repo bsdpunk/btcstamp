@@ -18,7 +18,7 @@
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
-
+alias sed='gsed'
 
 node btc.js | python -m json.tool > ordered
-cat ordered | grep bid | awk -F: '{print }' | sed 's/."\([0-9\.]*\).*/\1/'
+cat ordered | grep bid | gsed 's/.*"\([0-9\.]\+\).*/ \1/'
